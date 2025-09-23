@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>yolo环境 | 夙夜凌风</title><meta name="author" content="夙夜凌风"><meta name="copyright" content="夙夜凌风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="yolo环境使用Conda虚拟环境来配置YOLO环境是 步骤 1: 安装 Anaconda 或 Miniconda首先，确保您的系统中已安装Anaconda或Miniconda。如果没有安装，可以从以下链接下载并安装：  Anaconda 下载页面 Miniconda 下载页面  步骤 2: 创建 Conda 虚拟环境打开终端或命令提示符，创建一个新的Conda虚拟环境。 conda create">
+<meta property="og:type" content="article">
+<meta property="og:title" content="yolo环境">
+<meta property="og:url" content="http://example.com/2024/11/18/yolo%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:site_name" content="夙夜凌风">
+<meta property="og:description" content="yolo环境使用Conda虚拟环境来配置YOLO环境是 步骤 1: 安装 Anaconda 或 Miniconda首先，确保您的系统中已安装Anaconda或Miniconda。如果没有安装，可以从以下链接下载并安装：  Anaconda 下载页面 Miniconda 下载页面  步骤 2: 创建 Conda 虚拟环境打开终端或命令提示符，创建一个新的Conda虚拟环境。 conda create">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://suyelingfeng-blog.oss-cn-chengdu.aliyuncs.com/img/cat.png">
+<meta property="article:published_time" content="2024-11-18T02:29:53.000Z">
+<meta property="article:modified_time" content="2024-11-18T02:32:13.367Z">
+<meta property="article:author" content="夙夜凌风">
+<meta property="article:tag" content="yolo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://suyelingfeng-blog.oss-cn-chengdu.aliyuncs.com/img/cat.png"><link rel="shortcut icon" href="https://suyelingfeng-blog.oss-cn-chengdu.aliyuncs.com/img/favicon.png"><link rel="canonical" href="http://example.com/2024/11/18/yolo%E7%8E%AF%E5%A2%83/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"距离文章发布已经过去","messageNext":"天了，信息可能已经过时"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'yolo环境',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-18 10:32:13'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 8 || hour >= 20
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://suyelingfeng-blog.oss-cn-chengdu.aliyuncs.com/img/cat.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://suyelingfeng-blog.oss-cn-chengdu.aliyuncs.com/img/bei.png')"><nav id="nav"><span id="blog-info"><a href="/" title="夙夜凌风"><span class="site-name">夙夜凌风</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">yolo环境</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-18T02:29:53.000Z" title="发表于 2024-11-18 10:29:53">2024-11-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-18T02:32:13.367Z" title="更新于 2024-11-18 10:32:13">2024-11-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="yolo环境"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="yolo环境"><a href="#yolo环境" class="headerlink" title="yolo环境"></a>yolo环境</h1><p>使用Conda虚拟环境来配置YOLO环境是</p>
+<h3 id="步骤-1-安装-Anaconda-或-Miniconda"><a href="#步骤-1-安装-Anaconda-或-Miniconda" class="headerlink" title="步骤 1: 安装 Anaconda 或 Miniconda"></a>步骤 1: 安装 Anaconda 或 Miniconda</h3><p>首先，确保您的系统中已安装Anaconda或Miniconda。如果没有安装，可以从以下链接下载并安装：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.anaconda.com/products/distribution/">Anaconda 下载页面</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda 下载页面</a></li>
+</ul>
+<h3 id="步骤-2-创建-Conda-虚拟环境"><a href="#步骤-2-创建-Conda-虚拟环境" class="headerlink" title="步骤 2: 创建 Conda 虚拟环境"></a>步骤 2: 创建 Conda 虚拟环境</h3><p>打开终端或命令提示符，创建一个新的Conda虚拟环境。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">conda create --name yolo_env python=3.8</span><br></pre></td></tr></table></figure>
+
+<p>激活虚拟环境：</p>
+<ul>
+<li><p><strong>Windows</strong>:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">conda activate yolo_env</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>macOS&#x2F;Linux</strong>:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">conda activate yolo_env</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="步骤-3-安装必要的依赖库"><a href="#步骤-3-安装必要的依赖库" class="headerlink" title="步骤 3: 安装必要的依赖库"></a>步骤 3: 安装必要的依赖库</h3><p>在激活的虚拟环境中安装所需的库。</p>
+<h4 id="安装-OpenCV"><a href="#安装-OpenCV" class="headerlink" title="安装 OpenCV"></a>安装 OpenCV</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">conda install -c conda-forge opencv</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装-PyTorch-和-torchvision"><a href="#安装-PyTorch-和-torchvision" class="headerlink" title="安装 PyTorch 和 torchvision"></a>安装 PyTorch 和 torchvision</h4><p>YOLO模型通常需要PyTorch和torchvision。您可以使用Conda来安装这些库：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c conda-forge</span><br></pre></td></tr></table></figure>
+
+<p>注意：<code>cudatoolkit</code>的版本可以根据您的CUDA版本进行调整。如果您没有GPU，可以省略<code>cudatoolkit</code>部分。</p>
+<h4 id="安装-Ultralytics-YOLO"><a href="#安装-Ultralytics-YOLO" class="headerlink" title="安装 Ultralytics YOLO"></a>安装 Ultralytics YOLO</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pip install ultralytics</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤-4-验证安装"><a href="#步骤-4-验证安装" class="headerlink" title="步骤 4: 验证安装"></a>步骤 4: 验证安装</h3><p>创建一个简单的Python脚本来验证YOLO模型是否正确安装和工作。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ultralytics <span class="keyword">import</span> YOLO</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载预训练的 YOLOv8 模型</span></span><br><span class="line">model = YOLO(<span class="string">&#x27;yolov8s.pt&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进行目标检测</span></span><br><span class="line">results = model(<span class="string">&#x27;https://ultralytics.com/images/bus.jpg&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印检测结果</span></span><br><span class="line"><span class="built_in">print</span>(results)</span><br></pre></td></tr></table></figure>
+
+<p>保存上述代码为<code>test_yolo.py</code>，然后在终端中运行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">python test_yolo.py</span><br></pre></td></tr></table></figure>
+
+<p>如果一切正常，您应该能够看到模型对图片的检测结果。</p>
+<h3 id="步骤-5-运行示例代码"><a href="#步骤-5-运行示例代码" class="headerlink" title="步骤 5: 运行示例代码"></a>步骤 5: 运行示例代码</h3><p>您可以使用前面提供的完整代码来测试摄像头捕获视频流并在视频帧的左下角显示帧率（FPS）信息。</p>
+<h3 id="完整的示例代码"><a href="#完整的示例代码" class="headerlink" title="完整的示例代码"></a>完整的示例代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> ultralytics <span class="keyword">import</span> YOLO</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载 YOLO 模型</span></span><br><span class="line">model = YOLO(<span class="string">&#x27;yolov8s.pt&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 捕获视频流</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)  <span class="comment"># 打开默认摄像头</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> cap.isOpened():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Error: Could not open video stream.&quot;</span>)</span><br><span class="line">    exit()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 帧率计算相关变量</span></span><br><span class="line">start_time = time.time()</span><br><span class="line">frame_count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 处理视频流并显示帧率</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    ret, frame = cap.read()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ret:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Error: Failed to read frame from video stream.&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 进行目标检测</span></span><br><span class="line">    results = model(frame)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算帧率</span></span><br><span class="line">    frame_count += <span class="number">1</span></span><br><span class="line">    elapsed_time = time.time() - start_time</span><br><span class="line">    fps = frame_count / elapsed_time</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在图像上绘制帧率信息</span></span><br><span class="line">    fps_text = <span class="string">f&quot;FPS: <span class="subst">&#123;fps:<span class="number">.2</span>f&#125;</span>&quot;</span></span><br><span class="line">    cv2.putText(frame, fps_text, (<span class="number">10</span>, frame.shape[<span class="number">0</span>] - <span class="number">10</span>), cv2.FONT_HERSHEY_SIMPLEX, <span class="number">1</span>, (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 显示带有帧率信息的视频帧</span></span><br><span class="line">    cv2.imshow(<span class="string">&#x27;YOLOv8 Detection with FPS&#x27;</span>, frame)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 按&#x27;q&#x27;键退出</span></span><br><span class="line">    <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 释放资源</span></span><br><span class="line">cap.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通过以上步骤，您应该能够在Conda虚拟环境中成功配置YOLO环境，并使用Ultralytics的YOLO模型进行目标检测。。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">夙夜凌风</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/11/18/yolo%E7%8E%AF%E5%A2%83/">http://example.com/2024/11/18/yolo%E7%8E%AF%E5%A2%83/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">夙夜凌风</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/yolo/">yolo</a></div><div class="post_share"><div class="social-share" data-image="https://suyelingfeng-blog.oss-cn-chengdu.aliyuncs.com/img/cat.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/05/29/STM32-%E7%AE%97%E6%B3%95%E5%BA%93%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/" title="STM32 算法库技术文档"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">STM32 算法库技术文档</div></div></a></div><div class="next-post pull-right"><a href="/2024/10/07/arm%E6%9E%B6%E6%9E%84opencv%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAubantu/" title="arm架构opencv环境搭建ubantu"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">arm架构opencv环境搭建ubantu</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://suyelingfeng-blog.oss-cn-chengdu.aliyuncs.com/img/cat.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">夙夜凌风</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/suyelingfeng/suyelingfeng.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">此blog由夙夜凌风出品</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#yolo%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">yolo环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-1-%E5%AE%89%E8%A3%85-Anaconda-%E6%88%96-Miniconda"><span class="toc-number">1.0.1.</span> <span class="toc-text">步骤 1: 安装 Anaconda 或 Miniconda</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-2-%E5%88%9B%E5%BB%BA-Conda-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">1.0.2.</span> <span class="toc-text">步骤 2: 创建 Conda 虚拟环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-3-%E5%AE%89%E8%A3%85%E5%BF%85%E8%A6%81%E7%9A%84%E4%BE%9D%E8%B5%96%E5%BA%93"><span class="toc-number">1.0.3.</span> <span class="toc-text">步骤 3: 安装必要的依赖库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-OpenCV"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">安装 OpenCV</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-PyTorch-%E5%92%8C-torchvision"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">安装 PyTorch 和 torchvision</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Ultralytics-YOLO"><span class="toc-number">1.0.3.3.</span> <span class="toc-text">安装 Ultralytics YOLO</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-4-%E9%AA%8C%E8%AF%81%E5%AE%89%E8%A3%85"><span class="toc-number">1.0.4.</span> <span class="toc-text">步骤 4: 验证安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-5-%E8%BF%90%E8%A1%8C%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">1.0.5.</span> <span class="toc-text">步骤 5: 运行示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E7%9A%84%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">1.0.6.</span> <span class="toc-text">完整的示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.0.7.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/29/STM32-%E7%AE%97%E6%B3%95%E5%BA%93%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/" title="STM32 算法库技术文档">STM32 算法库技术文档</a><time datetime="2025-05-29T06:45:50.000Z" title="发表于 2025-05-29 14:45:50">2025-05-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/18/yolo%E7%8E%AF%E5%A2%83/" title="yolo环境">yolo环境</a><time datetime="2024-11-18T02:29:53.000Z" title="发表于 2024-11-18 10:29:53">2024-11-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/arm%E6%9E%B6%E6%9E%84opencv%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAubantu/" title="arm架构opencv环境搭建ubantu">arm架构opencv环境搭建ubantu</a><time datetime="2024-10-07T10:23:51.000Z" title="发表于 2024-10-07 18:23:51">2024-10-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/27/freertos%E5%9C%A8stm32%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8-%E5%BA%8F%E7%AB%A0/" title="freertos在stm32上的应用-序章">freertos在stm32上的应用-序章</a><time datetime="2024-08-27T13:07:37.000Z" title="发表于 2024-08-27 21:07:37">2024-08-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/05/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%8C%87%E9%92%88/" title="C语言的指针">C语言的指针</a><time datetime="2024-02-05T09:27:13.000Z" title="发表于 2024-02-05 17:27:13">2024-02-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://suyelingfeng-blog.oss-cn-chengdu.aliyuncs.com/img/bei.png')"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By 夙夜凌风</div><div class="footer_custom_text">夙夜凌风欢迎你！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script>
+// 浏览器搞笑标题
+var OriginTitle = document.title;
+var titleTime;
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        // 使用原生JavaScript修改favicon
+        var link = document.querySelector('link[rel="icon"]');
+        if (link) {
+            link.href = "/img/trhx2.png";
+        }
+        document.title = 'ヽ(●-`Д´-)ノ你丑你就走！';
+        clearTimeout(titleTime);
+    }
+    else {
+        // 使用原生JavaScript修改favicon
+        var link = document.querySelector('link[rel="icon"]');
+        if (link) {
+            link.href = "/img/trhx2.png";
+        }
+        document.title = 'ヾ(Ő∀Ő3)ノ你帅就回来！' + OriginTitle;
+        titleTime = setTimeout(function () {
+            document.title = OriginTitle;
+        }, 2000);
+    }
+});
+</script>
+<script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body></html>
