@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on 夙夜凌风</title>
+    <link>http://localhost:1313/tags/hugo/</link>
+    <description>Recent content from 夙夜凌风</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>xxx@example.com (夙夜凌风)</managingEditor>
+    <webMaster>xxx@example.com (夙夜凌风)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Wed, 03 Dec 2025 22:31:15 +0000</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+      
+    
+
+    <item>
+      <title>部署Hugo博客到GitHub Pages详细教程</title>
+      <link>http://localhost:1313/post/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%88%B0github-pages/</link>
+      <pubDate>Wed, 03 Dec 2025 22:31:15 &#43;0000</pubDate>
+      <author>xxx@example.com (夙夜凌风)</author>
+      <guid>http://localhost:1313/post/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%88%B0github-pages/</guid>
+      <description>
+        <![CDATA[<h1>部署Hugo博客到GitHub Pages详细教程</h1><p>作者：夙夜凌风（xxx@example.com）</p>
+        
+          <h1 id="部署hugo博客到github-pages详细教程">
+<a class="header-anchor" href="#%e9%83%a8%e7%bd%b2hugo%e5%8d%9a%e5%ae%a2%e5%88%b0github-pages%e8%af%a6%e7%bb%86%e6%95%99%e7%a8%8b"></a>
+部署Hugo博客到GitHub Pages详细教程
+</h1><h2 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h2><p>本文将详细介绍如何将Hugo博客部署到GitHub Pages，让您的博客在互联网上免费托管访问。</p>
+<h2 id="准备工作">
+<a class="header-anchor" href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c"></a>
+准备工作
+</h2><h3 id="1-确保已安装git">
+<a class="header-anchor" href="#1-%e7%a1%ae%e4%bf%9d%e5%b7%b2%e5%ae%89%e8%a3%85git"></a>
+1. 确保已安装Git
+</h3><p>如果尚未安装Git，请访问 <a href="https://git-scm.com/downloads">Git官网</a> 下载并安装。</p>
+<p>验证Git是否安装成功：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git --version
+</span></span></code></pre></div><h3 id="2-准备github账号">
+<a class="header-anchor" href="#2-%e5%87%86%e5%a4%87github%e8%b4%a6%e5%8f%b7"></a>
+2. 准备GitHub账号
+</h3><p>如果没有GitHub账号，请先注册：https://github.com/</p>
+<h2 id="第一步创建github仓库">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5%e5%88%9b%e5%bb%bagithub%e4%bb%93%e5%ba%93"></a>
+第一步：创建GitHub仓库
+</h2><h3 id="1-登录github">
+<a class="header-anchor" href="#1-%e7%99%bb%e5%bd%95github"></a>
+1. 登录GitHub
+</h3><p>访问 <a href="https://github.com/">https://github.com/</a> 并登录您的账号。</p>
+<h3 id="2-创建新仓库">
+<a class="header-anchor" href="#2-%e5%88%9b%e5%bb%ba%e6%96%b0%e4%bb%93%e5%ba%93"></a>
+2. 创建新仓库
+</h3><ul>
+<li>点击右上角的 <code>+</code> 号，选择 <code>New repository</code></li>
+<li><strong>仓库名称</strong>：输入 <code>username.github.io</code>（将<code>username</code>替换为您的GitHub用户名）
+<ul>
+<li>例如：如果您的用户名是 <code>lxttz</code>，则仓库名应为 <code>lxttz.github.io</code></li>
+</ul>
+</li>
+<li><strong>可见性</strong>：选择 <code>Public</code>（公开）</li>
+<li><strong>初始化</strong>：可以勾选 <code>Add a README file</code>（可选）</li>
+<li>点击 <code>Create repository</code> 创建仓库</li>
+</ul>
+<blockquote>
+<p><strong>重要说明</strong>：仓库名必须是 <code>您的用户名.github.io</code>，这样才能直接通过该域名访问您的博客。</p>
+</blockquote>
+<h2 id="第二步本地git配置">
+<a class="header-anchor" href="#%e7%ac%ac%e4%ba%8c%e6%ad%a5%e6%9c%ac%e5%9c%b0git%e9%85%8d%e7%bd%ae"></a>
+第二步：本地Git配置
+</h2><h3 id="1-配置git用户信息首次使用需要">
+<a class="header-anchor" href="#1-%e9%85%8d%e7%bd%aegit%e7%94%a8%e6%88%b7%e4%bf%a1%e6%81%af%e9%a6%96%e6%ac%a1%e4%bd%bf%e7%94%a8%e9%9c%80%e8%a6%81"></a>
+1. 配置Git用户信息（首次使用需要）
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;您的GitHub用户名&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;您的GitHub邮箱&#34;</span>
+</span></span></code></pre></div><h3 id="2-生成ssh密钥推荐方式">
+<a class="header-anchor" href="#2-%e7%94%9f%e6%88%90ssh%e5%af%86%e9%92%a5%e6%8e%a8%e8%8d%90%e6%96%b9%e5%bc%8f"></a>
+2. 生成SSH密钥（推荐方式）
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 检查是否已有SSH密钥</span>
+</span></span><span style="display:flex;"><span>ls ~/.ssh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果没有，生成新的SSH密钥</span>
+</span></span><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;您的GitHub邮箱&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 按提示操作，可以直接按回车使用默认设置</span>
+</span></span></code></pre></div><h3 id="3-添加ssh密钥到github">
+<a class="header-anchor" href="#3-%e6%b7%bb%e5%8a%a0ssh%e5%af%86%e9%92%a5%e5%88%b0github"></a>
+3. 添加SSH密钥到GitHub
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 复制公钥内容</span>
+</span></span><span style="display:flex;"><span>cat ~/.ssh/id_ed25519.pub
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或者使用（仅适用于macOS）</span>
+</span></span><span style="display:flex;"><span>pbcopy &lt; ~/.ssh/id_ed25519.pub
+</span></span></code></pre></div><p>然后在GitHub添加SSH密钥：</p>
+<ol>
+<li>点击头像 → <code>Settings</code></li>
+<li>左侧菜单 → <code>SSH and GPG keys</code></li>
+<li>点击 <code>New SSH key</code></li>
+<li>粘贴刚才复制的公钥内容</li>
+<li>点击 <code>Add SSH key</code></li>
+</ol>
+<h3 id="4-测试ssh连接">
+<a class="header-anchor" href="#4-%e6%b5%8b%e8%af%95ssh%e8%bf%9e%e6%8e%a5"></a>
+4. 测试SSH连接
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -T git@github.com
+</span></span></code></pre></div><p>如果看到 <code>Hi username! You've successfully authenticated...</code> 说明配置成功。</p>
+<h2 id="第三步初始化本地仓库并推送到github">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%89%e6%ad%a5%e5%88%9d%e5%a7%8b%e5%8c%96%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93%e5%b9%b6%e6%8e%a8%e9%80%81%e5%88%b0github"></a>
+第三步：初始化本地仓库并推送到GitHub
+</h2><h3 id="1-进入博客项目目录">
+<a class="header-anchor" href="#1-%e8%bf%9b%e5%85%a5%e5%8d%9a%e5%ae%a2%e9%a1%b9%e7%9b%ae%e7%9b%ae%e5%bd%95"></a>
+1. 进入博客项目目录
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd g:/hugo/hugo主题/hugo-theme-reimu/blog
+</span></span></code></pre></div><h3 id="2-初始化git仓库">
+<a class="header-anchor" href="#2-%e5%88%9d%e5%a7%8b%e5%8c%96git%e4%bb%93%e5%ba%93"></a>
+2. 初始化Git仓库
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span></code></pre></div><h3 id="3-创建-gitignore-文件">
+<a class="header-anchor" href="#3-%e5%88%9b%e5%bb%ba-gitignore-%e6%96%87%e4%bb%b6"></a>
+3. 创建 <code>.gitignore</code> 文件
+</h3><p>为了避免提交不必要的文件，创建 <code>.gitignore</code> 文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Windows PowerShell</span>
+</span></span><span style="display:flex;"><span>New-Item .gitignore -ItemType File
+</span></span></code></pre></div><p>编辑 <code>.gitignore</code> 文件，添加以下内容：</p>
+<pre tabindex="0"><code># Hugo生成的文件
+public/
+resources/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 其他
+node_modules/
+</code></pre><h3 id="4-添加所有文件到暂存区">
+<a class="header-anchor" href="#4-%e6%b7%bb%e5%8a%a0%e6%89%80%e6%9c%89%e6%96%87%e4%bb%b6%e5%88%b0%e6%9a%82%e5%ad%98%e5%8c%ba"></a>
+4. 添加所有文件到暂存区
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span></code></pre></div><h3 id="5-提交文件">
+<a class="header-anchor" href="#5-%e6%8f%90%e4%ba%a4%e6%96%87%e4%bb%b6"></a>
+5. 提交文件
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Initial commit&#34;</span>
+</span></span></code></pre></div><h3 id="6-关联远程仓库">
+<a class="header-anchor" href="#6-%e5%85%b3%e8%81%94%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93"></a>
+6. 关联远程仓库
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 使用SSH方式（推荐）</span>
+</span></span><span style="display:flex;"><span>git remote add origin git@github.com:您的用户名/您的用户名.github.io.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或使用HTTPS方式</span>
+</span></span><span style="display:flex;"><span>git remote add origin https://github.com/您的用户名/您的用户名.github.io.git
+</span></span></code></pre></div><h3 id="7-推送到github">
+<a class="header-anchor" href="#7-%e6%8e%a8%e9%80%81%e5%88%b0github"></a>
+7. 推送到GitHub
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 第一次推送需要设置上游分支</span>
+</span></span><span style="display:flex;"><span>git branch -M main
+</span></span><span style="display:flex;"><span>git push -u origin main
+</span></span></code></pre></div><h2 id="第四步配置github-pages">
+<a class="header-anchor" href="#%e7%ac%ac%e5%9b%9b%e6%ad%a5%e9%85%8d%e7%bd%aegithub-pages"></a>
+第四步：配置GitHub Pages
+</h2><h3 id="1-进入仓库设置">
+<a class="header-anchor" href="#1-%e8%bf%9b%e5%85%a5%e4%bb%93%e5%ba%93%e8%ae%be%e7%bd%ae"></a>
+1. 进入仓库设置
+</h3><p>在GitHub仓库页面，点击 <code>Settings</code> 标签。</p>
+<h3 id="2-启用github-pages">
+<a class="header-anchor" href="#2-%e5%90%af%e7%94%a8github-pages"></a>
+2. 启用GitHub Pages
+</h3><ol>
+<li>左侧菜单找到 <code>Pages</code>（在 <code>Code and automation</code> 部分）</li>
+<li>在 <code>Build and deployment</code> 部分：
+<ul>
+<li><strong>Source</strong>：选择 <code>Deploy from a branch</code></li>
+<li><strong>Branch</strong>：选择 <code>main</code> 分支和 <code>/ (root)</code> 目录</li>
+</ul>
+</li>
+<li>点击 <code>Save</code> 保存</li>
+</ol>
+<h3 id="3-等待部署">
+<a class="header-anchor" href="#3-%e7%ad%89%e5%be%85%e9%83%a8%e7%bd%b2"></a>
+3. 等待部署
+</h3><p>GitHub会自动部署您的网站，通常需要1-2分钟。</p>
+<ul>
+<li>页面会显示 <code>Your site is live at https://您的用户名.github.io/</code></li>
+<li>如果看到 <code>✓ Your site is live</code> 表示部署成功</li>
+</ul>
+<h2 id="第五步生成hugo静态文件并推送">
+<a class="header-anchor" href="#%e7%ac%ac%e4%ba%94%e6%ad%a5%e7%94%9f%e6%88%90hugo%e9%9d%99%e6%80%81%e6%96%87%e4%bb%b6%e5%b9%b6%e6%8e%a8%e9%80%81"></a>
+第五步：生成Hugo静态文件并推送
+</h2><p>由于GitHub Pages默认使用Jekyll，而Hugo生成的静态文件在 <code>public</code> 目录，我们需要将生成的文件推送到仓库。</p>
+<h3 id="方法一手动构建并推送简单方式">
+<a class="header-anchor" href="#%e6%96%b9%e6%b3%95%e4%b8%80%e6%89%8b%e5%8a%a8%e6%9e%84%e5%bb%ba%e5%b9%b6%e6%8e%a8%e9%80%81%e7%ae%80%e5%8d%95%e6%96%b9%e5%bc%8f"></a>
+方法一：手动构建并推送（简单方式）
+</h3><h4 id="1-生成静态文件">
+<a class="header-anchor" href="#1-%e7%94%9f%e6%88%90%e9%9d%99%e6%80%81%e6%96%87%e4%bb%b6"></a>
+1. 生成静态文件
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo
+</span></span></code></pre></div><p>这会在项目根目录生成 <code>public</code> 文件夹。</p>
+<h4 id="2-将public文件夹推送到github">
+<a class="header-anchor" href="#2-%e5%b0%86public%e6%96%87%e4%bb%b6%e5%a4%b9%e6%8e%a8%e9%80%81%e5%88%b0github"></a>
+2. 将public文件夹推送到GitHub
+</h4><p>创建一个子文件夹来管理public：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 删除public文件夹中的.git（如果之前已经初始化）</span>
+</span></span><span style="display:flex;"><span>rm -rf public/.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 进入public目录</span>
+</span></span><span style="display:flex;"><span>cd public
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 初始化git仓库</span>
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加远程仓库（注意：这是你的GitHub Pages仓库）</span>
+</span></span><span style="display:flex;"><span>git remote add origin git@github.com:您的用户名/您的用户名.github.io.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加所有文件</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 提交</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Deploy Hugo site&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 推送到main分支</span>
+</span></span><span style="display:flex;"><span>git branch -M main
+</span></span><span style="display:flex;"><span>git push -u origin main --force
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 返回项目根目录</span>
+</span></span><span style="display:flex;"><span>cd ..
+</span></span></code></pre></div><h3 id="方法二使用github-actions自动部署推荐更简单">
+<a class="header-anchor" href="#%e6%96%b9%e6%b3%95%e4%ba%8c%e4%bd%bf%e7%94%a8github-actions%e8%87%aa%e5%8a%a8%e9%83%a8%e7%bd%b2%e6%8e%a8%e8%8d%90%e6%9b%b4%e7%ae%80%e5%8d%95"></a>
+方法二：使用GitHub Actions自动部署（推荐，更简单）
+</h3><h4 id="1-创建github-actions工作流">
+<a class="header-anchor" href="#1-%e5%88%9b%e5%bb%bagithub-actions%e5%b7%a5%e4%bd%9c%e6%b5%81"></a>
+1. 创建GitHub Actions工作流
+</h4><p>在项目根目录创建以下文件夹和文件：</p>
+<pre tabindex="0"><code>.github/workflows/hugo.yml
+</code></pre><h4 id="2-编辑-hugoyml-文件内容">
+<a class="header-anchor" href="#2-%e7%bc%96%e8%be%91-hugoyml-%e6%96%87%e4%bb%b6%e5%86%85%e5%ae%b9"></a>
+2. 编辑 <code>hugo.yml</code> 文件内容：
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy Hugo site to Pages</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">main</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">workflow_dispatch</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">permissions</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">contents</span>: <span style="color:#ae81ff">read</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pages</span>: <span style="color:#ae81ff">write</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">id-token</span>: <span style="color:#ae81ff">write</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">concurrency</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">group</span>: <span style="color:#e6db74">&#34;pages&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">cancel-in-progress</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">defaults</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">run</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">shell</span>: <span style="color:#ae81ff">bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">HUGO_VERSION</span>: <span style="color:#ae81ff">0.120.4</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Hugo CLI</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &amp;&amp; sudo dpkg -i ${{ runner.temp }}/hugo.deb
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          </span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Dart Sass Embedded</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">sudo snap install dart-sass-embedded</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">submodules</span>: <span style="color:#ae81ff">recursive</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">fetch-depth</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Pages</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">pages</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/configure-pages@v5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Node.js dependencies</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#e6db74">&#34;[[ -f package-lock.json || -f npm-shrinkwrap.json ]] &amp;&amp; npm ci || true&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build with Hugo</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">HUGO_CACHEDIR</span>: <span style="color:#ae81ff">${{ runner.temp }}/hugo_cache</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">HUGO_ENVIRONMENT</span>: <span style="color:#ae81ff">production</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          hugo \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            --minify \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            --baseURL &#34;${{ steps.pages.outputs.base_url }}/&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Upload artifact</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/upload-pages-artifact@v3</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">path</span>: <span style="color:#ae81ff">./public</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">github-pages</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#ae81ff">${{ steps.deployment.outputs.page_url }}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">build</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy to GitHub Pages</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">deployment</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/deploy-pages@v4</span>
+</span></span></code></pre></div><h4 id="3-提交并推送github-actions配置">
+<a class="header-anchor" href="#3-%e6%8f%90%e4%ba%a4%e5%b9%b6%e6%8e%a8%e9%80%81github-actions%e9%85%8d%e7%bd%ae"></a>
+3. 提交并推送GitHub Actions配置
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .github/workflows/hugo.yml
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Add GitHub Actions workflow&#34;</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div><h4 id="4-启用github-pages">
+<a class="header-anchor" href="#4-%e5%90%af%e7%94%a8github-pages"></a>
+4. 启用GitHub Pages
+</h4><ol>
+<li>进入仓库的 <code>Settings</code> → <code>Pages</code></li>
+<li>在 <code>Build and deployment</code> 中：
+<ul>
+<li><strong>Source</strong>：选择 <code>GitHub Actions</code></li>
+</ul>
+</li>
+<li>保存设置</li>
+</ol>
+<p>这样，每次你推送代码到 <code>main</code> 分支，GitHub Actions会自动构建并部署你的博客。</p>
+<h2 id="第六步访问你的博客">
+<a class="header-anchor" href="#%e7%ac%ac%e5%85%ad%e6%ad%a5%e8%ae%bf%e9%97%ae%e4%bd%a0%e7%9a%84%e5%8d%9a%e5%ae%a2"></a>
+第六步：访问你的博客
+</h2><p>部署成功后，可以通过以下地址访问你的博客：</p>
+<pre tabindex="0"><code>https://您的用户名.github.io/
+</code></pre><p>例如：<code>https://lxttz.github.io/</code></p>
+<h2 id="第七步更新博客内容">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%83%e6%ad%a5%e6%9b%b4%e6%96%b0%e5%8d%9a%e5%ae%a2%e5%86%85%e5%ae%b9"></a>
+第七步：更新博客内容
+</h2><p>当你添加新文章或修改内容后，只需：</p>
+<h3 id="如果使用github-actions">
+<a class="header-anchor" href="#%e5%a6%82%e6%9e%9c%e4%bd%bf%e7%94%a8github-actions"></a>
+如果使用GitHub Actions：
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 添加修改的文件</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 提交</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;添加新文章：文章标题&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 推送到GitHub</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div><p>推送后，GitHub Actions会自动构建并部署，大约1-2分钟后即可访问。</p>
+<h3 id="如果手动部署">
+<a class="header-anchor" href="#%e5%a6%82%e6%9e%9c%e6%89%8b%e5%8a%a8%e9%83%a8%e7%bd%b2"></a>
+如果手动部署：
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. 先更新源代码</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;更新内容&#34;</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 生成静态文件</span>
+</span></span><span style="display:flex;"><span>hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. 推送public文件夹</span>
+</span></span><span style="display:flex;"><span>cd public
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Deploy Hugo site&#34;</span>
+</span></span><span style="display:flex;"><span>git push origin main --force
+</span></span><span style="display:flex;"><span>cd ..
+</span></span></code></pre></div><h2 id="常见问题排查">
+<a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98%e6%8e%92%e6%9f%a5"></a>
+常见问题排查
+</h2><h3 id="1-部署后访问404">
+<a class="header-anchor" href="#1-%e9%83%a8%e7%bd%b2%e5%90%8e%e8%ae%bf%e9%97%ae404"></a>
+1. 部署后访问404
+</h3><ul>
+<li>检查仓库名是否正确（必须是 <code>用户名.github.io</code>）</li>
+<li>等待2-3分钟后刷新页面</li>
+<li>检查GitHub Pages设置是否正确启用</li>
+</ul>
+<h3 id="2-样式或图片显示异常">
+<a class="header-anchor" href="#2-%e6%a0%b7%e5%bc%8f%e6%88%96%e5%9b%be%e7%89%87%e6%98%be%e7%a4%ba%e5%bc%82%e5%b8%b8"></a>
+2. 样式或图片显示异常
+</h3><ul>
+<li>确保 <code>config/_default/params.yml</code> 中的路径配置正确</li>
+<li>检查图片是否在正确的目录（<code>static/</code> 或 <code>public/</code>）</li>
+<li>确保baseURL配置正确</li>
+</ul>
+<h3 id="3-评论系统在github-pages不工作">
+<a class="header-anchor" href="#3-%e8%af%84%e8%ae%ba%e7%b3%bb%e7%bb%9f%e5%9c%a8github-pages%e4%b8%8d%e5%b7%a5%e4%bd%9c"></a>
+3. 评论系统在GitHub Pages不工作
+</h3><ul>
+<li>对于Utterances，确保GitHub仓库是公开的</li>
+<li>确保已在仓库设置中启用了Issues</li>
+<li>确保已安装Utterances GitHub App</li>
+</ul>
+<h3 id="4-自定义域名">
+<a class="header-anchor" href="#4-%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%9f%e5%90%8d"></a>
+4. 自定义域名
+</h3><p>如果需要使用自定义域名：</p>
+<ol>
+<li>在GitHub仓库的 <code>Settings</code> → <code>Pages</code> 中添加自定义域名</li>
+<li>根据提示配置DNS记录</li>
+<li>在项目中创建 <code>static/CNAME</code> 文件，内容为你的域名</li>
+</ol>
+<h2 id="更新baseurl配置">
+<a class="header-anchor" href="#%e6%9b%b4%e6%96%b0baseurl%e9%85%8d%e7%bd%ae"></a>
+更新baseURL配置
+</h2><p>部署到GitHub Pages后，需要更新 <code>hugo.toml</code> 中的baseURL：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://您的用户名.github.io/&#39;</span>
+</span></span></code></pre></div><p>例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://lxttz.github.io/&#39;</span>
+</span></span></code></pre></div><h2 id="总结">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93"></a>
+总结
+</h2><p>恭喜！你已经成功将Hugo博客部署到GitHub Pages了。现在你可以：</p>
+<ul>
+<li>通过 <code>https://您的用户名.github.io/</code> 访问你的博客</li>
+<li>通过Git推送更新来发布新文章</li>
+<li>享受免费的GitHub Pages托管服务</li>
+</ul>
+<p>祝你的博客之旅愉快！🎉</p>
+
+        
+        <hr><p>本文2025-12-03首发于<a href='http://localhost:1313/'>夙夜凌风</a>，最后修改于2025-12-03</p><p>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</p>]]>
+      </description>
+      
+        <category>感情篇祝福</category>
+      
+    </item>
+    
+  </channel>
+</rss>
