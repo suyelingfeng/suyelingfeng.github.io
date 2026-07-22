@@ -12,10 +12,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-#page-header::before {
-  background: linear-gradient(120deg, rgba(15, 23, 42, 0.72), rgba(30, 64, 175, 0.42));
-}
-
 #page-header #site-title {
   font-weight: 750;
   letter-spacing: 0.08em;
