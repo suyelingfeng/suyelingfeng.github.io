@@ -95,7 +95,7 @@ body {
 .blog-boot-progress::after { content:""; display:block; width:100%; height:100%; background:linear-gradient(90deg,transparent,var(--boot-cyan),#60a5fa); transform:translateX(-100%); animation:boot-progress 1.45s cubic-bezier(.2,.7,.3,1) .35s forwards; }
 @keyframes boot-terminal-in { to { transform:translateY(0) scale(1); } }
 @keyframes boot-line { to { opacity:1; transform:translateY(0); } }
-@keyframes boot-type { to { width:12ch; } }
+@keyframes boot-type { to { width:13ch; } }
 @keyframes boot-cursor { 50% { opacity:0; } }
 @keyframes boot-progress { to { transform:translateX(0); } }
 @keyframes boot-scan { to { transform:translateY(4px); } }
