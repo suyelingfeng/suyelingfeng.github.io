@@ -101,3 +101,26 @@ body {
 @keyframes boot-scan { to { transform:translateY(4px); } }
 @media (max-width:520px) { .blog-boot-body { min-height:210px; } .blog-boot-title { display:none; } }
 @media (prefers-reduced-motion:reduce) { #blog-boot-screen,.blog-boot-terminal { transition-duration:.15s; } .blog-boot-line,.blog-boot-typing,.blog-boot-progress::after { animation-duration:.01ms!important; animation-delay:0s!important; } }
+.blog-boot-enter {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+  width:100%;
+  margin-top:22px;
+  padding:12px 15px;
+  border:1px solid rgba(94,234,212,.36);
+  border-radius:7px;
+  color:#ccfbf1;
+  background:rgba(15,118,110,.08);
+  font:inherit;
+  letter-spacing:.08em;
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .3s ease,transform .3s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.blog-boot-enter.is-ready { opacity:1; transform:translateY(0); }
+.blog-boot-enter:hover,.blog-boot-enter:focus-visible { outline:none; background:rgba(20,184,166,.17); border-color:#5eead4; box-shadow:0 0 22px rgba(45,212,191,.13); }
+.blog-boot-enter:disabled { cursor:default; }
+.blog-boot-enter kbd { padding:3px 7px; border:1px solid #334155; border-bottom-width:2px; border-radius:4px; color:#94a3b8; background:#0f172a; font:10px "Cascadia Code",Consolas,monospace; }
