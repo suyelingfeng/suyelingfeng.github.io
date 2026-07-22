@@ -72,3 +72,32 @@ body {
     animation-iteration-count: 1 !important;
   }
 }
+/* Programmer-style startup animation */
+.blog-boot-lock { overflow: hidden; }
+#blog-boot-screen { --boot-cyan:#5eead4; --boot-green:#86efac; position:fixed; inset:0; z-index:999999; display:grid; place-items:center; overflow:hidden; color:#d1fae5; background-color:#050b12; background-image:linear-gradient(rgba(94,234,212,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(94,234,212,.045) 1px,transparent 1px),radial-gradient(circle at 50% 45%,rgba(13,148,136,.18),transparent 42%); background-size:32px 32px,32px 32px,auto; font-family:"Cascadia Code","JetBrains Mono","SFMono-Regular",Consolas,monospace; opacity:0; transition:opacity .42s ease,visibility .42s ease; }
+#blog-boot-screen::before { content:""; position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.13) 4px); animation:boot-scan 8s linear infinite; }
+#blog-boot-screen.is-active { opacity:1; }
+#blog-boot-screen.is-exiting { opacity:0; visibility:hidden; }
+.blog-boot-terminal { position:relative; width:min(680px,calc(100vw - 36px)); border:1px solid rgba(94,234,212,.32); border-radius:12px; background:rgba(2,8,15,.82); box-shadow:0 0 0 1px rgba(255,255,255,.025),0 28px 90px rgba(0,0,0,.55),0 0 42px rgba(20,184,166,.09); backdrop-filter:blur(12px); transform:translateY(12px) scale(.985); animation:boot-terminal-in .48s cubic-bezier(.2,.8,.2,1) forwards; }
+.blog-boot-bar { display:flex; align-items:center; gap:8px; height:38px; padding:0 14px; border-bottom:1px solid rgba(148,163,184,.16); color:#64748b; font-size:11px; letter-spacing:.08em; }
+.blog-boot-dot { width:8px; height:8px; border-radius:50%; background:#334155; }
+.blog-boot-dot:nth-child(1) { background:#fb7185; } .blog-boot-dot:nth-child(2) { background:#fbbf24; } .blog-boot-dot:nth-child(3) { background:#4ade80; }
+.blog-boot-title { margin-left:auto; }
+.blog-boot-body { min-height:238px; padding:clamp(20px,5vw,34px); font-size:clamp(12px,2vw,15px); line-height:1.9; }
+.blog-boot-line { opacity:0; transform:translateY(5px); animation:boot-line .25s ease forwards; }
+.blog-boot-line:nth-child(1) { animation-delay:.18s; } .blog-boot-line:nth-child(2) { animation-delay:.42s; } .blog-boot-line:nth-child(3) { animation-delay:.68s; }
+.blog-boot-muted { color:#64748b; } .blog-boot-ok { color:var(--boot-green); }
+.blog-boot-command { margin-top:14px; color:#e2e8f0; font-size:clamp(1.35rem,5vw,2.6rem); letter-spacing:.035em; white-space:nowrap; }
+.blog-boot-prompt { color:var(--boot-cyan); margin-right:.55em; }
+.blog-boot-typing { display:inline-block; width:0; overflow:hidden; vertical-align:bottom; animation:boot-type .72s steps(12,end) .9s forwards; }
+.blog-boot-cursor { color:var(--boot-cyan); animation:boot-cursor .62s step-end infinite; }
+.blog-boot-progress { height:2px; overflow:hidden; background:rgba(94,234,212,.08); }
+.blog-boot-progress::after { content:""; display:block; width:100%; height:100%; background:linear-gradient(90deg,transparent,var(--boot-cyan),#60a5fa); transform:translateX(-100%); animation:boot-progress 1.45s cubic-bezier(.2,.7,.3,1) .35s forwards; }
+@keyframes boot-terminal-in { to { transform:translateY(0) scale(1); } }
+@keyframes boot-line { to { opacity:1; transform:translateY(0); } }
+@keyframes boot-type { to { width:12ch; } }
+@keyframes boot-cursor { 50% { opacity:0; } }
+@keyframes boot-progress { to { transform:translateX(0); } }
+@keyframes boot-scan { to { transform:translateY(4px); } }
+@media (max-width:520px) { .blog-boot-body { min-height:210px; } .blog-boot-title { display:none; } }
+@media (prefers-reduced-motion:reduce) { #blog-boot-screen,.blog-boot-terminal { transition-duration:.15s; } .blog-boot-line,.blog-boot-typing,.blog-boot-progress::after { animation-duration:.01ms!important; animation-delay:0s!important; } }
