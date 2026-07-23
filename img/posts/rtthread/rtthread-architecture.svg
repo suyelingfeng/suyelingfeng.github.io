@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">RT-Thread 在 STM32F103C8T6 上的软件分层</title>
+  <desc id="desc">从应用线程、组件服务、内核、设备框架与 BSP 到 STM32F103C8T6 硬件的分层图。</desc>
+  <rect width="1200" height="680" fill="#f7f4ed"/>
+  <g font-family="'Microsoft YaHei','Noto Sans SC',sans-serif" fill="#292c2f">
+    <text x="600" y="54" text-anchor="middle" font-size="30" font-weight="700">RT-Thread 在 STM32F103C8T6 上的软件分层</text>
+    <text x="600" y="86" text-anchor="middle" font-size="16" fill="#6a6d70">应用不直接碰寄存器，线程、内核与设备框架各管一层</text>
+
+    <g stroke="#35383a" stroke-width="2">
+      <rect x="105" y="122" width="990" height="88" rx="8" fill="#fffdf8"/>
+      <rect x="105" y="228" width="480" height="88" rx="8" fill="#e7efed"/>
+      <rect x="610" y="228" width="485" height="88" rx="8" fill="#e7efed"/>
+      <rect x="105" y="334" width="990" height="88" rx="8" fill="#f0e4df"/>
+      <rect x="105" y="440" width="485" height="88" rx="8" fill="#e9e8e3"/>
+      <rect x="610" y="440" width="485" height="88" rx="8" fill="#e9e8e3"/>
+      <rect x="105" y="546" width="990" height="82" rx="8" fill="#34383a"/>
+    </g>
+
+    <text x="150" y="157" font-size="18" font-weight="700">应用层</text>
+    <text x="150" y="187" font-size="17">LED 线程　传感器采集线程　串口命令线程　业务逻辑</text>
+
+    <text x="150" y="263" font-size="18" font-weight="700">组件与服务</text>
+    <text x="150" y="293" font-size="17">FinSH / 软件包 / 文件系统</text>
+    <text x="655" y="263" font-size="18" font-weight="700">设备访问接口</text>
+    <text x="655" y="293" font-size="17">rt_device_find / open / read / write</text>
+
+    <text x="150" y="369" font-size="18" font-weight="700">RT-Thread 内核</text>
+    <text x="150" y="399" font-size="17">抢占式调度　线程管理　时钟与定时器　信号量 / 互斥量 / 邮箱 / 消息队列</text>
+
+    <text x="150" y="475" font-size="18" font-weight="700">设备驱动框架</text>
+    <text x="150" y="505" font-size="17">PIN　UART　I²C　SPI　ADC</text>
+    <text x="655" y="475" font-size="18" font-weight="700">CPU 移植与 BSP</text>
+    <text x="655" y="505" font-size="17">启动文件　时钟　中断　链接脚本</text>
+
+    <text x="600" y="582" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">STM32F103C8T6 硬件</text>
+    <text x="600" y="610" text-anchor="middle" font-size="16" fill="#d9d9d6">Cortex-M3 · 72 MHz · 64 KB Flash · 20 KB SRAM</text>
+  </g>
+</svg>
