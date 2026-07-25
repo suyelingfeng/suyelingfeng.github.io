@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">ROS 2 软件分层与节点图</title>
+  <desc id="desc">从机器人应用节点、ROS客户端库、RCL与RMW、DDS中间件到操作系统和硬件的分层结构。</desc>
+  <rect width="1280" height="760" fill="#f7f8fa"/>
+  <g font-family="Microsoft YaHei,Noto Sans SC,sans-serif" fill="#172033">
+    <text x="640" y="54" text-anchor="middle" font-size="30" font-weight="700">ROS 2 软件分层与节点图</text>
+    <text x="640" y="86" text-anchor="middle" font-size="16" fill="#627086">应用关注机器人功能，通信细节由下层逐级抽象</text>
+
+    <g stroke="#31445f" stroke-width="2">
+      <rect x="80" y="122" width="1120" height="152" rx="8" fill="#ffffff"/>
+      <rect x="80" y="296" width="1120" height="82" rx="8" fill="#eaf2f5"/>
+      <rect x="80" y="400" width="540" height="82" rx="8" fill="#e8edf5"/>
+      <rect x="660" y="400" width="540" height="82" rx="8" fill="#e8edf5"/>
+      <rect x="80" y="504" width="1120" height="82" rx="8" fill="#f3ece5"/>
+      <rect x="80" y="608" width="1120" height="88" rx="8" fill="#27364a"/>
+    </g>
+
+    <text x="110" y="154" font-size="17" font-weight="700">机器人应用节点</text>
+    <g font-size="17" text-anchor="middle">
+      <rect x="122" y="177" width="205" height="62" rx="6" fill="#eef5f7" stroke="#5a7884"/>
+      <rect x="398" y="177" width="205" height="62" rx="6" fill="#eef5f7" stroke="#5a7884"/>
+      <rect x="674" y="177" width="205" height="62" rx="6" fill="#eef5f7" stroke="#5a7884"/>
+      <rect x="950" y="177" width="205" height="62" rx="6" fill="#eef5f7" stroke="#5a7884"/>
+      <text x="224" y="215">传感器驱动</text>
+      <text x="500" y="215">定位与感知</text>
+      <text x="776" y="215">规划与决策</text>
+      <text x="1052" y="215">底盘控制</text>
+    </g>
+
+    <text x="110" y="329" font-size="17" font-weight="700">客户端库</text>
+    <text x="640" y="349" text-anchor="middle" font-size="18">rclcpp（C++）　·　rclpy（Python）　·　其他语言绑定</text>
+
+    <text x="110" y="433" font-size="17" font-weight="700">RCL</text>
+    <text x="350" y="458" text-anchor="middle" font-size="17">统一的 ROS 客户端基础接口</text>
+    <text x="690" y="433" font-size="17" font-weight="700">RMW</text>
+    <text x="930" y="458" text-anchor="middle" font-size="17">中间件实现的适配层</text>
+
+    <text x="110" y="537" font-size="17" font-weight="700">DDS / RTPS 中间件</text>
+    <text x="640" y="561" text-anchor="middle" font-size="17">发现、序列化、传输与 QoS 策略</text>
+
+    <text x="640" y="646" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">操作系统、网络与机器人硬件</text>
+    <text x="640" y="674" text-anchor="middle" font-size="16" fill="#d5deea">Linux / Windows　·　以太网 / Wi-Fi　·　传感器 / 执行器 / 计算平台</text>
+  </g>
+</svg>

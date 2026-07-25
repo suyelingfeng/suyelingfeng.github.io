@@ -45,6 +45,10 @@ body { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Se
 #article-container a { text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
 #article-container blockquote { border-left: 3px solid var(--blog-accent); border-radius: 0 6px 6px 0; background: var(--blog-accent-soft); }
 #article-container code { border-radius: 4px; }
+.diagram-picture { display: block; width: 100%; margin: 1rem 0 1.4rem; overflow: hidden; border: 1px solid var(--blog-border); border-radius: 6px; background: #f7f8fa; }
+#article-container .diagram-picture img { display: block; width: 100%; height: auto; margin: 0; }
+.diagram-picture .diagram-mobile { display: none; }
+.diagram-picture .diagram-desktop { display: block; }
 
 .section-hero { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; margin-bottom: 1.75rem; padding: 0 0 1.25rem; border-bottom: 1px solid var(--blog-border); }
 .section-hero-icon { display: grid; place-items: center; width: 46px; height: 46px; border: 1px solid var(--blog-border); border-radius: 6px; color: var(--blog-accent); font-size: 1.1rem; }
@@ -104,6 +108,8 @@ body { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Se
 .about-github small { margin-top: 0.1rem; color: var(--font-color); opacity: 0.55; }
 
 @media (max-width: 768px) {
+  .diagram-picture .diagram-desktop { display: none; }
+  .diagram-picture .diagram-mobile { display: block; }
   #live2dcanvas { transform: scale(0.7); transform-origin: right bottom; opacity: 0.86; pointer-events: none; }
   #page-header.full_page {
     height: 48vh;
