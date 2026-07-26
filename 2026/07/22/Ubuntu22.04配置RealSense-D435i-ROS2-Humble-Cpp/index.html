@@ -79,7 +79,13 @@
           if (!itemStr) {
             return undefined
           }
-          const item = JSON.parse(itemStr)
+          let item
+          try {
+            item = JSON.parse(itemStr)
+          } catch (error) {
+            localStorage.removeItem(key)
+            return undefined
+          }
           const now = Date.now()
       
           if (now > item.expiry) {

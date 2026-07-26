@@ -54,7 +54,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2026-07-26 18:57:50'
+  postUpdate: '2026-07-26 19:05:18'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -74,7 +74,13 @@
           if (!itemStr) {
             return undefined
           }
-          const item = JSON.parse(itemStr)
+          let item
+          try {
+            item = JSON.parse(itemStr)
+          } catch (error) {
+            localStorage.removeItem(key)
+            return undefined
+          }
           const now = Date.now()
       
           if (now > item.expiry) {
